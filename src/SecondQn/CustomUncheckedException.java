@@ -1,9 +1,8 @@
-public class SecondQn {
-    //Second Qn
-    public static class CustomUncheckedException extends RuntimeException {
-        public CustomUncheckedException (String message, Throwable error) {
-            super(message, error);
-        }
+package SecondQn;
+
+public class CustomUncheckedException extends RuntimeException {
+    public CustomUncheckedException(String message, Throwable cause) {
+        super(message, cause);
     }
 
     public static void causeError() {
@@ -16,11 +15,12 @@ public class SecondQn {
 
         try {
             // Simulate an error
-            SecondQn.causeError();
+            causeError();
         } catch (Exception e) {
             // Wrap the caught exception in a CustomUncheckedException
             throw new SecondQn.CustomUncheckedException("Something went wrong", e);
         }
     }
-
 }
+
+
